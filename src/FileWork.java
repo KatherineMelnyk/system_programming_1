@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 import java.io.File;
 
 public class FileWork {
@@ -12,6 +12,7 @@ public class FileWork {
             String temp = "";
             String [] subStr;
             String delimeter = "\\W"; // Разделитель
+            Dictionary words = new Hashtable();
 
             while (sc.hasNextLine()){
 
@@ -21,10 +22,13 @@ public class FileWork {
                 for(int i = 0; i < subStr.length; i++) {
                         int count = subStr[i].toLowerCase().replaceAll("a|e|i|o|y|u", "").length();
                             if (count < subStr[i].length()-count) {
-                                System.out.println(subStr[i]);}
+                                words.put(subStr[i],true);
                 }
             }
         }
-
+            for (Enumeration k = words.keys(); k.hasMoreElements();) {
+                System.out.println(k.nextElement());
+            }
         }
+}
 
