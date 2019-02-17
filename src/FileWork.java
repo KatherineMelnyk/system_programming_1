@@ -12,7 +12,7 @@ public class FileWork {
 
             String temp = "";
             String[] subStr;
-            String delimeter = "\\W"; // Разделитель
+            String delimeter = "(_|\\W)+"; // Разделитель
             Dictionary words = new Hashtable();
 
             while (sc.hasNextLine()) {
